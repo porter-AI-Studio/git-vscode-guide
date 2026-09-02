@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="zh-TW" data-astro-cid-mw7aashj> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>日常版更與推送流程 | </title><link rel="stylesheet" href="/git-vscode-guide/_astro/DocsLayout.BldRaKia.css"></head>Git 與 VSCode 整合指南 <meta name="description" content="掌握日常開發的標準推版流程與常見狀況處理"> <link rel="icon" href="/git-vscode-guide/favicon.svg" type="image/svg+xml"> <script>
+    (function () {
+      const s = localStorage.getItem('cc-theme');
+      const d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (s === 'dark' || (!s && d)) document.documentElement.classList.add('dark');
+    })();
+  </script>  </html> <body data-astro-cid-mw7aashj> <div id="pb" data-astro-cid-mw7aashj></div> <header data-astro-cid-mw7aashj> <div class="hi" data-astro-cid-mw7aashj> <div class="hl" data-astro-cid-mw7aashj> <button id="mbtn" class="ibtn" aria-label="選單" data-astro-cid-mw7aashj> <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" data-astro-cid-mw7aashj> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-mw7aashj></path> </svg> </button> <a href="/git-vscode-guide/" class="site-name" data-astro-cid-mw7aashj> <span class="logo" data-astro-cid-mw7aashj>Git</span>&nbsp;&nbsp;Git 與 VSCode 整合指南
+</a> </div> <div class="hr" data-astro-cid-mw7aashj> <button id="tt" class="ibtn" aria-label="切換主題" data-astro-cid-mw7aashj> <svg id="isun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none" data-astro-cid-mw7aashj> <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728 0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" data-astro-cid-mw7aashj></path> </svg> <svg id="imoon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" data-astro-cid-mw7aashj> <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 0 0 12 21a9.003 9.003 0 0 0 8.354-5.646z" data-astro-cid-mw7aashj></path> </svg> </button> </div> </div> </header> <div id="layout" data-astro-cid-mw7aashj> <nav id="sb" data-astro-cid-mw7aashj> <div class="np" data-astro-cid-mw7aashj> <button class="pt open" data-pid="1" data-astro-cid-mw7aashj> <span data-astro-cid-mw7aashj>Part 1：指南</span> <svg class="arr" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" data-astro-cid-mw7aashj> <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" data-astro-cid-mw7aashj></path> </svg> </button> <ul class="nl" data-pl="1" data-astro-cid-mw7aashj> <li data-astro-cid-mw7aashj> <a href="/git-vscode-guide/ch01-git-basics" data-astro-cid-mw7aashj> <span class="cn" data-astro-cid-mw7aashj>1.</span> <span data-astro-cid-mw7aashj>Git 基本觀念</span>  </a> </li><li data-astro-cid-mw7aashj> <a href="/git-vscode-guide/ch02-vscode-git" data-astro-cid-mw7aashj> <span class="cn" data-astro-cid-mw7aashj>2.</span> <span data-astro-cid-mw7aashj>VSCode 與 Git 整合操作</span>  </a> </li><li data-astro-cid-mw7aashj> <a href="/git-vscode-guide/ch03-workflow" class="active" data-astro-cid-mw7aashj> <span class="cn" data-astro-cid-mw7aashj>3.</span> <span data-astro-cid-mw7aashj>日常版更與推送流程</span>  </a> </li><li data-astro-cid-mw7aashj> <a href="/git-vscode-guide/ch04-ai-git" data-astro-cid-mw7aashj> <span class="cn" data-astro-cid-mw7aashj>4.</span> <span data-astro-cid-mw7aashj>AI 時代的 Git 管理</span>  </a> </li> </ul> </div> </nav> <div id="ov" data-astro-cid-mw7aashj></div> <main data-astro-cid-mw7aashj> <div class="cb" data-astro-cid-mw7aashj>  <h1>日常版更與推送流程</h1> <img src="/git-vscode-guide/img/workflow_sync.png" alt="日常推送至雲端的同步流程" style="max-width: 50%; border-radius: 8px; margin: 1rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"> <p>這章節會帶你走過每一天最常用的「版更與推版」標準作業流程 (SOP)。</p> <h2>標準的 VSCode 推送流程 (Daily Workflow)</h2> <p>當你完成了一個段落的程式碼，準備進行「版更」並推送到 GitHub 時，請依循以下步驟：</p> <div class="flowchart-container" style="margin: 2rem 0;"> 
+<svg viewBox="0 0 800 200" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--border)" />
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <!-- Step 1: Save -->
+  <g>
+    <rect x="20" y="70" width="140" height="60" fill="var(--bg2)" stroke="var(--border)" stroke-width="2" rx="8" />
+    <text x="90" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17px" font-weight="bold" fill="var(--text)">1. 存檔修改</text>
+  </g>
+
+  <path d="M 160 100 L 210 100" fill="none" stroke="var(--border)" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Step 2: Stage -->
+  <g>
+    <rect x="220" y="70" width="140" height="60" fill="var(--bg2)" stroke="var(--border)" stroke-width="2" rx="8" />
+    <text x="290" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17px" font-weight="bold" fill="var(--text)">2. 暫存 (Stage)</text>
+  </g>
+
+  <path d="M 360 100 L 410 100" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow-accent)" />
+
+  <!-- Step 3: Commit -->
+  <g>
+    <rect x="420" y="70" width="140" height="60" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="2" rx="8" />
+    <text x="490" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17px" font-weight="bold" fill="var(--text)">3. 提交 (Commit)</text>
+  </g>
+
+  <path d="M 560 100 L 610 100" fill="none" stroke="var(--border)" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Step 4: Sync -->
+  <g>
+    <rect x="620" y="70" width="140" height="60" fill="var(--bg2)" stroke="var(--border)" stroke-width="2" rx="8" />
+    <text x="690" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17px" font-weight="bold" fill="var(--text)">4. 同步 (Sync)</text>
+  </g>
+</svg>
+ </div> <ol> <li><strong>存檔</strong>：確認 VSCode 內的檔案都已存檔 (快捷鍵 <kbd>Ctrl</kbd> + <kbd>S</kbd>)。</li> <li><strong>檢視變更</strong>：切換到 <code>Source Control</code> 面板，檢查有哪些檔案被修改。</li> <li><strong>暫存 (Stage)</strong>：點擊 <code>Changes</code> 區塊右上角的 <code>+</code> 號，一次將所有變更放入暫存區 (Staged Changes)。</li> <li><strong>提交 (Commit)</strong>：
+<ul> <li>寫清楚這版更新了什麼內容。建議使用簡單的前綴：
+<ul> <li><code>feat:</code> (新增功能)</li> <li><code>fix:</code> (修復 Bug)</li> <li><code>docs:</code> (文件更新)</li> <li><code>style:</code> (排版與格式化)</li> </ul> </li> <li>按下 <code>✓</code> 按鈕或點擊 <code>Commit</code>。</li> </ul> </li> <li><strong>同步 / 推送 (Sync / Push)</strong>：
+<ul> <li>提交完成後，面板上會出現 <code>Sync Changes</code> (同步變更) 按鈕，點擊它即可將本地的更新推送到 GitHub。</li> <li>如果遠端有別人的更新，它也會一併拉取 (Pull) 下來。</li> </ul> </li> </ol> <h2>常見狀況與最佳實踐</h2> <h3>1. 忽略不需要版控的檔案 (<code>.gitignore</code>)</h3> <ul> <li>有些檔案 <strong>絕對不應該</strong> 上傳到 Git，例如：
+<ul> <li><code>node_modules/</code> (套件庫)</li> <li><code>.env</code>, <code>.env.local</code> (機密金鑰與環境變數)</li> <li>作業系統快取如 <code>.DS_Store</code></li> <li>打包產物如 <code>dist/</code>, <code>build/</code></li> </ul> </li> <li><strong>強制規範</strong>：所有專案必須包含 <code>.gitignore</code> 檔案。如果發現在 Changes 列表裡出現這些檔案，請在專案根目錄修改或建立 <code>.gitignore</code> 檔案，並將要忽略的資料夾/檔案名稱寫入。</li> </ul> <h3>2. 遇到合併衝突 (Merge Conflicts)</h3> <ul> <li>當你與遠端儲存庫的同一份檔案的同一行程式碼有不同的修改時，VSCode 會提示發生衝突。</li> <li>檔案內會出現高亮區塊，讓你選擇：
+<ul> <li><code>Accept Current Change</code> (保留你本地的變更)</li> <li><code>Accept Incoming Change</code> (保留遠端的變更)</li> <li><code>Accept Both Changes</code> (兩者都保留，稍後手動修改)</li> </ul> </li> <li>選擇完畢並存檔後，重新 Stage <code>+</code> 並 Commit 即可解決衝突。</li> </ul> <figure class="diagram-wrap" style="margin:2rem 0;text-align:center"> 
+<svg viewBox="0 0 700 420" width="700" height="420" xmlns="http://www.w3.org/2000/svg" style="max-width:100%">
+  <defs>
+    <marker id="carr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--border)" />
+    </marker>
+    <marker id="carr-accent" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <!-- Step 1: 衝突發生 -->
+  <rect x="255" y="10" width="190" height="50" rx="25" fill="var(--accent)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="350" y="41" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17px" font-weight="bold" fill="#fff">衝突發生</text>
+
+  <path d="M 350 60 L 350 88" fill="none" stroke="var(--border)" stroke-width="2" marker-end="url(#carr)"/>
+
+  <!-- Step 2: 開啟檔案 -->
+  <rect x="240" y="88" width="220" height="46" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="2"/>
+  <text x="350" y="117" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16px" fill="var(--text)">開啟衝突檔案</text>
+
+  <!-- Fan out arrow -->
+  <path d="M 350 134 L 350 162" fill="none" stroke="var(--border)" stroke-width="2"/>
+  <path d="M 70 162 L 630 162" fill="none" stroke="var(--border)" stroke-width="2"/>
+
+  <!-- Branch down arrows -->
+  <path d="M 70 162 L 70 190" fill="none" stroke="var(--border)" stroke-width="1.5" marker-end="url(#carr)"/>
+  <path d="M 230 162 L 230 190" fill="none" stroke="var(--border)" stroke-width="1.5" marker-end="url(#carr)"/>
+  <path d="M 470 162 L 470 190" fill="none" stroke="var(--border)" stroke-width="1.5" marker-end="url(#carr)"/>
+  <path d="M 630 162 L 630 190" fill="none" stroke="var(--border)" stroke-width="1.5" marker-end="url(#carr)"/>
+
+  <!-- Option A: Accept Current -->
+  <rect x="10" y="190" width="120" height="60" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="2"/>
+  <text x="70" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14px" font-weight="bold" fill="var(--text)">Accept Current</text>
+  <text x="70" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13px" fill="var(--text)">保留本地變更</text>
+  <text x="70" y="244" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13px" fill="var(--accent)">（推薦）</text>
+
+  <!-- Option B: Accept Incoming -->
+  <rect x="170" y="190" width="120" height="60" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="2"/>
+  <text x="230" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14px" font-weight="bold" fill="var(--text)">Accept Incoming</text>
+  <text x="230" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13px" fill="var(--text)">保留遠端變更</text>
+
+  <!-- Option C: Accept Both -->
+  <rect x="410" y="190" width="120" height="60" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="2"/>
+  <text x="470" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14px" font-weight="bold" fill="var(--text)">Accept Both</text>
+  <text x="470" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13px" fill="var(--text)">兩者都保留</text>
+
+  <!-- Option D: 手動編輯 -->
+  <rect x="570" y="190" width="120" height="60" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="2"/>
+  <text x="630" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14px" font-weight="bold" fill="var(--text)">手動編輯</text>
+  <text x="630" y="230" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13px" fill="var(--text)">直接修改程式碼</text>
+
+  <!-- Converge arrows -->
+  <path d="M 70 250 L 70 302" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+  <path d="M 230 250 L 230 302" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+  <path d="M 470 250 L 470 302" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+  <path d="M 630 250 L 630 302" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+  <path d="M 70 302 L 630 302" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+  <path d="M 350 302 L 350 330" fill="none" stroke="var(--border)" stroke-width="2" marker-end="url(#carr)"/>
+
+  <!-- Step 3: Stage 衝突檔案 -->
+  <rect x="225" y="330" width="250" height="46" rx="8" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="350" y="355" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16px" font-weight="bold" fill="var(--accent)">Stage 衝突檔案</text>
+  <text x="350" y="370" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14px" fill="var(--text)">點擊 + 重新放入暫存區</text>
+
+  <path d="M 350 376 L 350 402" fill="none" stroke="var(--border)" stroke-width="2" marker-end="url(#carr)"/>
+
+  <!-- Step 4: Commit -->
+  <rect x="255" y="400" width="190" height="15" rx="0" fill="none"/>
+  <rect x="245" y="398" width="210" height="18" rx="9" fill="var(--accent)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="350" y="411" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16px" font-weight="bold" fill="#fff">Commit — 衝突解決完成</text>
+</svg>
+ <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:var(--text-muted,var(--text));opacity:0.75">圖 3-1：Merge Conflict 解決決策流程</figcaption> </figure>  </div> <nav class="cnav" data-astro-cid-mw7aashj> <a href="/git-vscode-guide/ch02-vscode-git" class="prev" data-astro-cid-mw7aashj> <span class="nd" data-astro-cid-mw7aashj>← 上一章</span> <span class="nt" data-astro-cid-mw7aashj>VSCode 與 Git 整合操作</span> </a> <a href="/git-vscode-guide/glossary" class="next" data-astro-cid-mw7aashj> <span class="nd" data-astro-cid-mw7aashj>下一章 →</span> <span class="nt" data-astro-cid-mw7aashj>名詞解釋</span> </a> </nav> </main> </div> <script>
+    // Theme
+    const html = document.documentElement;
+    const tt = document.getElementById('tt');
+    const isun = document.getElementById('isun');
+    const imoon = document.getElementById('imoon');
+    function syncIcons() {
+      const dk = html.classList.contains('dark');
+      isun.style.display = dk ? 'block' : 'none';
+      imoon.style.display = dk ? 'none' : 'block';
+    }
+    syncIcons();
+    tt?.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('cc-theme', html.classList.contains('dark') ? 'dark' : 'light');
+      syncIcons();
+    });
+
+    // Progress
+    const pb = document.getElementById('pb');
+    window.addEventListener('scroll', () => {
+      const t = document.documentElement.scrollHeight - window.innerHeight;
+      pb.style.width = t > 0 ? `${(window.scrollY / t) * 100}%` : '0%';
+    }, { passive: true });
+
+    // Sidebar part toggles
+    document.querySelectorAll('.pt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.pid;
+        const list = document.querySelector(`[data-pl="${id}"]`);
+        btn.classList.toggle('open');
+        list?.classList.toggle('closed');
+      });
+    });
+
+    // Mobile menu
+    const sb = document.getElementById('sb');
+    const ov = document.getElementById('ov');
+    const mb = document.getElementById('mbtn');
+    const open = () => { sb.classList.add('open'); ov.classList.add('open'); document.body.style.overflow='hidden'; };
+    const close = () => { sb.classList.remove('open'); ov.classList.remove('open'); document.body.style.overflow=''; };
+    mb?.addEventListener('click', open);
+    ov?.addEventListener('click', close);
+  </script> </body> 
